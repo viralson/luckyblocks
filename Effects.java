@@ -82,6 +82,7 @@ public final class Effects {
 
     private static void target(Entity e, Player p) { if (e instanceof Mob m) m.setTarget(p); }
 
+    @SuppressWarnings("deprecation") // setOwningPlayer działa na każdym buildzie
     public Effects() {
 
         // =================================================================
@@ -327,7 +328,7 @@ public final class Effects {
             c.place(b.getRelative(BlockFace.UP), GOLD_BLOCK);
             Block top = b.getRelative(0, 2, 0);
             if (c.place(top, PLAYER_HEAD) && top.getState() instanceof org.bukkit.block.Skull s) {
-                s.setProfile(io.papermc.paper.datacomponent.item.ResolvableProfile.resolvableProfile(c.p.getPlayerProfile()));
+                s.setOwningPlayer(c.p);
                 s.update();
             }
             c.msg("<a>Wzniesiono Twój złoty pomnik! <m>(2 bloki złota do wzięcia)");

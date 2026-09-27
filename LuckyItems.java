@@ -44,6 +44,7 @@ public final class LuckyItems {
         return Tier.byKey(it.getItemMeta().getPersistentDataContainer().get(key, PersistentDataType.STRING));
     }
 
+    @SuppressWarnings({"deprecation", "removal"}) // stary konstruktor działa na każdym buildzie 26.x
     public void registerRecipes() {
         if (!pl.getConfig().getBoolean("receptury", true)) return;
         // Rzadki: 8 sztabek złota wokół dozownika
@@ -55,14 +56,14 @@ public final class LuckyItems {
         // Epicki: 4 rzadkie + 4 diamenty + blok ametystu
         ShapedRecipe e = new ShapedRecipe(new NamespacedKey(pl, "lucky_epicki"), item(Tier.EPICKI, 1));
         e.shape("RDR", "DAD", "RDR");
-        e.setIngredient('R', RecipeChoice.exactChoice(item(Tier.RZADKI, 1)));
+        e.setIngredient('R', new RecipeChoice.ExactChoice(item(Tier.RZADKI, 1)));
         e.setIngredient('D', Material.DIAMOND);
         e.setIngredient('A', Material.AMETHYST_BLOCK);
         add(e);
         // Legendarny: 4 epickie + 4 bloki diamentów + gwiazda Netheru
         ShapedRecipe l = new ShapedRecipe(new NamespacedKey(pl, "lucky_legendarny"), item(Tier.LEGENDARNY, 1));
         l.shape("EDE", "DND", "EDE");
-        l.setIngredient('E', RecipeChoice.exactChoice(item(Tier.EPICKI, 1)));
+        l.setIngredient('E', new RecipeChoice.ExactChoice(item(Tier.EPICKI, 1)));
         l.setIngredient('D', Material.DIAMOND_BLOCK);
         l.setIngredient('N', Material.NETHER_STAR);
         add(l);
