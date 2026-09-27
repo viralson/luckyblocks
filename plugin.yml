@@ -1,0 +1,17 @@
+name: LuckyBlock
+version: '${project.version}'
+main: pl.lucky.LuckyPlugin
+api-version: '26.2'
+author: marynowiczfranek
+description: Lucky Blocki w 3 rodzajach (rzadki, epicki, legendarny) ze 100 efektami.
+
+commands:
+  lucky:
+    description: Lucky Blocki – menu, kolekcja, komendy admina.
+    aliases: [luckyblock, lb, szczescie]
+    usage: /lucky
+
+permissions:
+  lucky.admin:
+    description: Dawanie lucky blocków, testowanie efektów, deszcz lucky blocków.
+    default: op

@@ -1,0 +1,39 @@
+# =====================================================
+#   🍀 LUCKY BLOCK – konfiguracja
+#   Rzadki = gąbka · Epicki = blok ametystu · Legendarny = blok złota
+#   (zwykłe bloki nie są lucky – liczy się tylko postawiony przedmiot)
+# =====================================================
+
+# Czy mogą wypaść Warden i Wither (efekty legendarne, bardzo rzadkie)
+niebezpieczne-efekty: true
+
+# Czy TNT z lucky blocków niszczy bloki
+wybuchy-niszcza-bloki: false
+
+# Wyłączone efekty (ID z /lucky efekty), np. [wither, warden, teleport]
+wylaczone-efekty: []
+
+# Receptury craftingu lucky blocków
+receptury: true
+
+# Poświata wokół postawionych lucky blocków
+poswiata: true
+
+# Długość animacji otwierania (ticki, 20 = 1 s)
+animacja-tickow: 24
+
+# Szansa na lucky block przy wykopaniu dowolnej rudy
+z-rud:
+  szansa: 0.01        # 1%
+  epicki: 0.25        # z czego 25% to epicki
+  legendarny: 0.05    # a 5% legendarny
+
+ogloszenia:
+  legendarny: true    # ogłaszaj każde otwarcie legendarnego
+  epicki-dobry: false # ogłaszaj dobre efekty z epickich
+
+# Automatyczny deszcz lucky blocków (0 = wyłączony)
+deszcz:
+  co-ile-minut: 0
+  rodzaj: rzadki
+  ilosc: 2
